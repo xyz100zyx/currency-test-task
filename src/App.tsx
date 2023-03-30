@@ -8,13 +8,9 @@ import {Loader} from "./components/common";
 
 function App() {
 
-  const currencyRequestStatus = useAppSelector(currencyStatusSelector)
-  const isLoaderOpen = currencyRequestStatus === RequestStatusValue.PENDING
-
   return (
     <>
       <GlobalRoute />
-      {isLoaderOpen && <Loader />}
     </>
   );
 }

@@ -1,14 +1,16 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import {FormConverter} from "../../components/widgets/forms";
 import {Typography} from "@mui/material";
 import {ErrorsText, RequestStatusValue} from "../../utils/constants";
 import {useAppSelector} from "../../hooks/redux";
 import {currencyRateOneToOneSelector, currencyStatusSelector} from "../../store/selectors/currency";
+import {Loader} from "../../components/common";
 
 export const ConverterPage: FC = () => {
 
     const rateResult = useAppSelector(currencyRateOneToOneSelector);
     const rateRequestStatus = useAppSelector(currencyStatusSelector)
+    const isLoaderOpen = rateRequestStatus === RequestStatusValue.PENDING
     const isNeedViewResult = rateRequestStatus !== null && rateRequestStatus !== RequestStatusValue.PENDING && !!rateResult;
     const resultSting = !rateResult && rateRequestStatus === RequestStatusValue.REJECTED ? ErrorsText.CONVERT : `Результат конвертирования: ${rateResult}`
 
@@ -30,6 +32,7 @@ export const ConverterPage: FC = () => {
             >
                 {resultSting}
             </Typography>)}
+            {isLoaderOpen && <Loader />}
         </>
     )
 }
