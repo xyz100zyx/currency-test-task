@@ -17,7 +17,7 @@ export const TableRates: FC<ITableRates> = ({base}) => {
     const isRejected = currencyStatus === RequestStatusValue.REJECTED;
 
     useEffect(() => {
-        thunkDispatch(getNewCurrencyRatesAndList({base}))
+        //thunkDispatch(getNewCurrencyRatesAndList({base}))
     }, [base, thunkDispatch])
 
     return isFulfilled ? (
