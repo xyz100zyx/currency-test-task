@@ -23,9 +23,10 @@ export const NavBar: FC = () => {
                 display: "flex",
                 gap: "40px"
             }}
+            data-testid='navigation-bar'
         >
-            <StyledNavLink text='Currency table' to='/rates' variant={isActiveTable ? 'colored' : 'outlined'} />
-            <StyledNavLink text='Currency converter' to='/form' variant={isActiveConverter ? 'colored' : 'outlined'} />
+            <StyledNavLink dataTestId={'nav-to-rates'} text='Currency table' to='/rates' variant={isActiveTable ? 'colored' : 'outlined'} />
+            <StyledNavLink dataTestId={'nav-to-form'} text='Currency converter' to='/form' variant={isActiveConverter ? 'colored' : 'outlined'} />
         </Box>
     )
 }

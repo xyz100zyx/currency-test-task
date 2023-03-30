@@ -8,6 +8,7 @@ export const Loader: FC = ( ) => {
 
     return createPortal((
         <Container
+            data-testid='loader'
             sx={{
                 maxWidth: '100% !important',
                 width: '100%',

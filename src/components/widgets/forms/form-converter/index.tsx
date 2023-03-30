@@ -41,16 +41,18 @@ export const FormConverter: FC = () => {
                 }}
             >Введите в формате "15 USD in RUB"</InputLabel>
             <Input
-
+                inputProps={{ "data-testid": "input-converter" }}
                 id='input-converter'
                 error={isError}
+                type='text'
                 sx={{
                     padding: '4px 8px',
                     color: '#363636',
                     maxWidth: '100%',
                     width: '100%'
                 }}
-                value={value} onChange={(e) => onChangeInputHandler(e)}
+                value={value}
+                onChange={(e) => onChangeInputHandler(e)}
             />
             <Button
                 sx={{
@@ -60,8 +62,9 @@ export const FormConverter: FC = () => {
                 }}
                 type='submit'
                 variant='contained'
+                data-testid= "btn-convert"
             >
-                count
+                get converted value
             </Button>
         </form>
     )

@@ -15,9 +15,11 @@ export const ConverterPage: FC = () => {
     return (
         <>
             <FormConverter />
-            {isNeedViewResult && <Typography
+            {isNeedViewResult && (
+                <Typography
                 variant="body1"
                 component="h2"
+                data-testid="converter-result"
                 sx={{
                     fontSize: '16px',
                     fontWeight: '600',
@@ -27,7 +29,7 @@ export const ConverterPage: FC = () => {
                 }}
             >
                 {resultSting}
-            </Typography>}
+            </Typography>)}
         </>
     )
 }

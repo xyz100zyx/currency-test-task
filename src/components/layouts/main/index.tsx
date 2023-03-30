@@ -33,6 +33,7 @@ export const MainLayout:FC = () => {
                     Currency Converter by<br/>LLC «AlgoBrains Solutions»
                 </Typography>
                 <Typography
+                    data-testid="subtitle"
                     variant="h6"
                     sx={{
                         textAlign: "center",
