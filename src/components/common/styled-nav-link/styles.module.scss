@@ -1,0 +1,28 @@
+.link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #767676;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 7px;
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  @media (max-width: 676px) {
+    font-size: 14px;
+  }
+
+  &__outlined {
+    border: 1px solid #767676;
+  }
+
+  &__colored {
+    color: #fff;
+    background-color: #282c34;
+  }
+}

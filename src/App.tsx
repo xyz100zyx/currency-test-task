@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {GlobalRoute} from "./components/router";
+import {useAppSelector} from "./hooks/redux";
+import {currencyStatusSelector} from "./store/selectors/currency";
+import {RequestStatusValue} from "./utils/constants";
+import {Loader} from "./components/common";
 
 function App() {
+
+  const currencyRequestStatus = useAppSelector(currencyStatusSelector)
+  const isLoaderOpen = currencyRequestStatus === RequestStatusValue.PENDING
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalRoute />
+      {isLoaderOpen && <Loader />}
+    </>
   );
 }
 

@@ -1,0 +1,22 @@
+.loader {
+  animation: spin 2s linear infinite;
+
+  @media(max-width: 768px){
+    max-width: 44px;
+    max-height: 44px;
+  }
+
+  @media(max-width: 320px){
+    max-width: 22px;
+    max-height: 22px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

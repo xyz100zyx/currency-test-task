@@ -5,6 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url("./assets/app-bg.jpg");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(2px);
+  min-height: 100vh;
+  max-height: 100vh;
+  overflowY: scroll;
+
 }
 
 code {
